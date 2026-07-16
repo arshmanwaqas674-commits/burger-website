@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-wrapper {
+    display: flex;
+    flex-direction: column; /* Is se navbar upar aur content neeche aayega */
+    height: 100vh;          /* Pura page height cover karega */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center; /* Center mein lane ke liye */
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+}
+ul{
+  flex-direction: row;
+  justify-content: space-around;
+  text-decoration: none;
+list-style: none;
+top:auto;
+}
+/* Ye us container par lagayein jis mein aapke links hain */
+.nav-container {
+    display: flex;
+    justify-content: center; /* Links ko left/right mein center karne ke liye */
+    align-items: flex-start; /* Ye zaruri hai! Ye links ko top par rakhega */
+    position: absolute;      /* Is se links page ke top par fix ho jayenge */
+    top: 0;                  /* Top se faasla zero ho jayega */
+    width: 100%;             /* Pura width le lega */
+    padding-top: 20px;       /* Upar se thoda gap dene ke liye */
+    gap: 20px;
+}
+
+.hero-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+h1{
+color:yellow;
+}
+button{
+background-color: yellow;
+color: black;
+}
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column; /* Mobile par upar-neeche ho jayega */
+        text-align: center;
+    }
+  }
