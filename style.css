@@ -1,56 +1,139 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.main-wrapper {
-    display: flex;
-    flex-direction: column; /* Is se navbar upar aur content neeche aayega */
-    height: 100vh;          /* Pura page height cover karega */
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
-.navbar {
-    display: flex;
-    justify-content: center; /* Center mein lane ke liye */
-    gap: 20px;
-    padding: 20px;
-    width: 100%;
-}
+/* Navbar */
+
 ul{
-  flex-direction: row;
-  justify-content: space-around;
-  text-decoration: none;
-list-style: none;
-top:auto;
-}
-/* Ye us container par lagayein jis mein aapke links hain */
-.nav-container {
-    display: flex;
-    justify-content: center; /* Links ko left/right mein center karne ke liye */
-    align-items: flex-start; /* Ye zaruri hai! Ye links ko top par rakhega */
-    position: absolute;      /* Is se links page ke top par fix ho jayenge */
-    top: 0;                  /* Top se faasla zero ho jayega */
-    width: 100%;             /* Pura width le lega */
-    padding-top: 20px;       /* Upar se thoda gap dene ke liye */
-    gap: 20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+    list-style:none;
+    background:#111;
+    padding:20px;
 }
 
-.hero-container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
+ul li a{
+    text-decoration:none;
+    color:#fff;
+    text-transform:capitalize;
+    font-size:18px;
+    transition:.3s;
 }
-h1{
-color:yellow;
+
+ul li a:hover{
+    color:orange;
 }
+
+/* Hero Section */
+
+.mainContainer{
+    width:100%;
+    min-height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:60px;
+}
+
+.text{
+    flex:1;
+}
+
+.text h3{
+    color:orange;
+    font-size:25px;
+    margin-bottom:15px;
+}
+
+.text h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.text p{
+    font-size:18px;
+    line-height:30px;
+    color:#555;
+    margin-bottom:30px;
+}
+
 button{
-background-color: yellow;
-color: black;
+    padding:15px 35px;
+    background:orange;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:18px;
 }
-@media (max-width: 768px) {
-    .hero-container {
-        flex-direction: column; /* Mobile par upar-neeche ho jayega */
-        text-align: center;
+
+button:hover{
+    background:#111;
+}
+
+.image{
+    flex:1;
+    text-align:center;
+}
+
+.image img{
+    width:100%;
+}
+
+/* Tablet */
+
+@media(max-width:768px){
+
+    .container{
+        flex-direction:column-reverse;
+        text-align:center;
     }
-  }
+
+    .text h1{
+        font-size:45px;
+    }
+
+    .image img{
+        max-width:400px;
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:480px){
+
+    ul{
+        flex-wrap:wrap;
+        gap:15px;
+    }
+
+    .text h1{
+        font-size:35px;
+    }
+
+    .text p{
+        font-size:16px;
+    }
+
+    button{
+        width:180px;
+    }
+
+}
